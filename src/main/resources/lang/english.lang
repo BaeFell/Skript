@@ -492,6 +492,9 @@ entities:
 	human:
 		name: human¦s
 		pattern: human(|1¦s)
+	monster:
+		name: monster¦s
+		pattern: <age> monster(|1¦s)
 	arrow:
 		name: arrow¦s @an
 		pattern: arrow(|1¦s)
@@ -610,6 +613,12 @@ entities:
 	unsaddled pig:
 		name: unsaddled pig¦s @an
 		pattern: unsaddled pig(|1¦s)
+	shulker:
+		name: shulker¦s
+		pattern: shulker(|1¦s)
+	shulker bullet:
+		name: shulker bullet¦s
+		pattern: shulker bullet(|1¦s)
 	player:
 		name: player¦s
 		pattern: player(|1¦s)

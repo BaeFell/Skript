@@ -492,6 +492,9 @@ entities:
 	human:
 		name: Mensch¦en @m
 		pattern: Mensch[en]
+	monster:
+		name: monster #Google Translate told me that the translation was "Monster" and there was no difference in plurals.
+		pattern: <age> monster
 	arrow:
 		name: Pfeil¦e @m
 		pattern: Pfeil[e]
@@ -610,6 +613,12 @@ entities:
 	unsaddled pig:
 		name: ungesattelte¦s Schwein¦ Schweine @n
 		pattern: ungesattete[s] Schwein[e]
+	shulker:
+		name: shulker¦s
+		pattern: shulker[s]
+	shulker bullet:
+		name: shulker kugel¦n #Courtesy of Google Translate
+		pattern: shulker kugel[n] #Courtesy of Google Translate
 	player:
 		name: Spieler @m
 		pattern: Spieler

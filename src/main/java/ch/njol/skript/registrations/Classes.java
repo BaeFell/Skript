@@ -84,12 +84,21 @@ public abstract class Classes {
 	 */
 	public static <T> void registerClass(final ClassInfo<T> info) {
 		Skript.checkAcceptRegistrations();
-		if (classInfosByCodeName.containsKey(info.getCodeName()))
-			throw new IllegalArgumentException("Can't register " + info.getC().getName() + " with the code name " + info.getCodeName() + " because that name is already used by " + classInfosByCodeName.get(info.getCodeName()));
-		if (exactClassInfos.containsKey(info.getC()))
-			throw new IllegalArgumentException("Can't register the class info " + info.getCodeName() + " because the class " + info.getC().getName() + " is already registered");
-		if (info.getCodeName().length() > DatabaseStorage.MAX_CLASS_CODENAME_LENGTH)
-			throw new IllegalArgumentException("The codename '" + info.getCodeName() + "' is too long to be saved in a database, the maximum length allowed is " + DatabaseStorage.MAX_CLASS_CODENAME_LENGTH);
+		if (classInfosByCodeName.containsKey(info.getCodeName())) {
+			Skript.warning("Can't register " + info.getC().getName() + " with the code name " + info.getCodeName() + " because that name is already used by " + classInfosByCodeName.get(info.getCodeName()));
+			return;
+//			throw new IllegalArgumentException("Can't register " + info.getC().getName() + " with the code name " + info.getCodeName() + " because that name is already used by " + classInfosByCodeName.get(info.getCodeName()));
+		}
+		if (exactClassInfos.containsKey(info.getC())) {
+			Skript.warning("Can't register the class info " + info.getCodeName() + " because the class " + info.getC().getName() + " is already registered");
+			return;
+//			throw new IllegalArgumentException("Can't register the class info " + info.getCodeName() + " because the class " + info.getC().getName() + " is already registered");
+		}
+		if (info.getCodeName().length() > DatabaseStorage.MAX_CLASS_CODENAME_LENGTH) {
+			Skript.warning("The codename '" + info.getCodeName() + "' is too long to be saved in a database, the maximum length allowed is " + DatabaseStorage.MAX_CLASS_CODENAME_LENGTH);
+			return;
+//			throw new IllegalArgumentException("The codename '" + info.getCodeName() + "' is too long to be saved in a database, the maximum length allowed is " + DatabaseStorage.MAX_CLASS_CODENAME_LENGTH);
+		}
 		exactClassInfos.put(info.getC(), info);
 		classInfosByCodeName.put(info.getCodeName(), info);
 		tempClassInfos.add(info);

@@ -29,32 +29,20 @@
 	<dependencies>
 
 	    <!--Spigot API 1.9 -->
+	    <!--Bukkit API 1.9 -->
+	    
+	    <!--Spigot API 1.8 -->
 	    <dependency>
 	           <groupId>org.spigotmc</groupId>
 	           <artifactId>spigot-api</artifactId>
 	           <version>1.9-R0.1-SNAPSHOT</version>
 	           <scope>provided</scope>
 	    </dependency>
-	    <!--Bukkit API 1.9 -->
-	    <dependency>
-	            <groupId>org.bukkit</groupId>
-	            <artifactId>bukkit</artifactId>
-	            <version>1.9-R0.1-SNAPSHOT</version>
-	            <scope>provided</scope>
-	    </dependency>
-	    
-	    <!--Spigot API 1.8 -->
-	    <dependency>
-	           <groupId>org.spigotmc</groupId>
-	           <artifactId>spigot-api</artifactId>
-	           <version>1.8.8-R0.1-SNAPSHOT</version>
-	           <scope>provided</scope>
-	    </dependency>
 	    <!--Bukkit API 1.8 -->
 	    <dependency>
 	            <groupId>org.bukkit</groupId>
 	            <artifactId>bukkit</artifactId>
-	            <version>1.8.8-R0.1-SNAPSHOT</version>
+	            <version>1.9-R0.1-SNAPSHOT</version>
 	            <scope>provided</scope>
 	    </dependency>
 

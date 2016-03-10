@@ -125,7 +125,7 @@ public abstract class Serializer<T> extends YggdrasilSerializer<T> {
 	 */
 	protected abstract boolean canBeInstantiated();
 	
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({"unchecked", "null"})
 	@Override
 	public <E extends T> E deserialize(final Class<E> c, final Fields fields) throws StreamCorruptedException, NotSerializableException {
 		final ClassInfo<? extends T> info = this.info;

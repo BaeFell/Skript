@@ -61,8 +61,8 @@ import org.bukkit.event.hanging.HangingEvent;
 import org.bukkit.event.hanging.HangingPlaceEvent;
 import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.painting.PaintingEvent;
-import org.bukkit.event.painting.PaintingPlaceEvent;
+//import org.bukkit.event.painting.PaintingEvent;
+//import org.bukkit.event.painting.PaintingPlaceEvent;
 import org.bukkit.event.player.PlayerBedEnterEvent;
 import org.bukkit.event.player.PlayerBedLeaveEvent;
 import org.bukkit.event.player.PlayerBucketEmptyEvent;
@@ -584,7 +584,7 @@ public final class BukkitEventValues {
 					return e.getPlayer();
 				}
 			}, 0);
-		} else {
+		/*} else {
 			EventValues.registerEventValue(PaintingEvent.class, Painting.class, new Getter<Painting, PaintingEvent>() {
 				@Override
 				@Nullable
@@ -607,6 +607,7 @@ public final class BukkitEventValues {
 					return e.getPlayer();
 				}
 			}, 0);
+			*/
 		}
 		
 		// --- VehicleEvents ---

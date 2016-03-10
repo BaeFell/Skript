@@ -50,6 +50,8 @@ import ch.njol.util.coll.CollectionUtils;
 public class EvtClick extends SkriptEvent {
 	
 	// Important: a click on an entity fires both an PlayerInteractEntityEvent and a PlayerInteractEvent
+
+	// TheBukor: It only fires a PlayerInteractEntityEvent in 1.9, I guess.
 	
 	private final static int RIGHT = 1, LEFT = 2, ANY = RIGHT | LEFT;
 	
@@ -125,7 +127,7 @@ public class EvtClick extends SkriptEvent {
 			return false;
 		}
 		
-		if (tools != null && !tools.check(e, new Checker<ItemType>() {
+		if (e instanceof PlayerInteractEvent && tools != null && !tools.check(e, new Checker<ItemType>() {
 			@Override
 			public boolean check(final ItemType t) {
 				return t.isOfType(((PlayerInteractEvent) e).getItem());

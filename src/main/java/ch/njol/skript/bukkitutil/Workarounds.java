@@ -44,10 +44,17 @@ public abstract class Workarounds {
 	static {
 		// allows to properly remove a player's tool in right click events
 		Bukkit.getPluginManager().registerEvents(new Listener() {
+			@SuppressWarnings("deprecation")
 			@EventHandler(priority = EventPriority.HIGHEST)
 			public void onInteract(final PlayerInteractEvent e) {
-				if (e.hasItem() && (e.getPlayer().getItemInHand() == null || e.getPlayer().getItemInHand().getType() == Material.AIR || e.getPlayer().getItemInHand().getAmount() == 0))
-					e.setUseItemInHand(Result.DENY);
+				//TODO Check if it's needed to do one for off hand?
+				if (Skript.isRunningMinecraft(1, 9)) {
+					if (e.hasItem() && (e.getPlayer().getInventory().getItemInMainHand() == null || e.getPlayer().getInventory().getItemInMainHand().getType() == Material.AIR || e.getPlayer().getInventory().getItemInMainHand().getAmount() == 0))
+						e.setUseItemInHand(Result.DENY);
+				} else { //Compatibility reasons
+					if (e.hasItem() && (e.getPlayer().getInventory().getItemInHand() == null || e.getPlayer().getInventory().getItemInHand().getType() == Material.AIR || e.getPlayer().getInventory().getItemInHand().getAmount() == 0))
+						e.setUseItemInHand(Result.DENY);
+				}
 			}
 		}, Skript.getInstance());
 	}

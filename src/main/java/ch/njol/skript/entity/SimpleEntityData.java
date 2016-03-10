@@ -53,10 +53,13 @@ import org.bukkit.entity.IronGolem;
 import org.bukkit.entity.ItemFrame;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.MagmaCube;
+import org.bukkit.entity.Monster;
 import org.bukkit.entity.MushroomCow;
 import org.bukkit.entity.Painting;
 import org.bukkit.entity.PigZombie;
 import org.bukkit.entity.Projectile;
+import org.bukkit.entity.Shulker;
+import org.bukkit.entity.ShulkerBullet;
 import org.bukkit.entity.Silverfish;
 import org.bukkit.entity.Slime;
 import org.bukkit.entity.SmallFireball;
@@ -149,7 +152,8 @@ public class SimpleEntityData extends EntityData<Entity> {
 		types.add(new SimpleEntityDataInfo("bottle of enchanting", ThrownExpBottle.class));
 		types.add(new SimpleEntityDataInfo("tnt", TNTPrimed.class));
 		types.add(new SimpleEntityDataInfo("zombie", Zombie.class));
-		types.add(new SimpleEntityDataInfo("shulker", Golem.class));
+		types.add(new SimpleEntityDataInfo("shulker", Shulker.class));
+		types.add(new SimpleEntityDataInfo("shulker bullet", ShulkerBullet.class));
 		types.add(new SimpleEntityDataInfo("golem", Golem.class));
 		types.add(new SimpleEntityDataInfo("guardian", Guardian.class));
 		
@@ -170,6 +174,7 @@ public class SimpleEntityData extends EntityData<Entity> {
 		
 		// supertypes
 		types.add(new SimpleEntityDataInfo("human", HumanEntity.class, true));
+		types.add(new SimpleEntityDataInfo("monster", Monster.class, true)); //I don't know why Njol never included that. I did now ^^
 		types.add(new SimpleEntityDataInfo("creature", Creature.class, true));
 		types.add(new SimpleEntityDataInfo("projectile", Projectile.class, true));
 		types.add(new SimpleEntityDataInfo("living entity", LivingEntity.class, true));

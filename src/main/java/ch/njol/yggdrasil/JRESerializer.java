@@ -130,7 +130,7 @@ public class JRESerializer extends YggdrasilSerializer<Object> {
 		throw new StreamCorruptedException();
 	}
 	
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({"unchecked", "null"})
 	@Override
 	public <E> E deserialize(Class<E> c, Fields fields) throws StreamCorruptedException, NotSerializableException {
 		if (c == UUID.class) {
